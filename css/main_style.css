@@ -692,7 +692,6 @@ font-weight: 700;
     height: 360px;
     position: sticky;
     top: 100px;
-    left: 0;
 }
 
 .right {
@@ -975,4 +974,5 @@ dd {
 
 .footer_bottom p {
     padding-top: 5px;
+
 }
