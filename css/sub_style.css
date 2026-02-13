@@ -163,8 +163,9 @@ body {
 
 }
 
-.gnb li a:hover {
-    color: #E1B8A8;
+.gnb li a:hover,
+.gnb li a.on {
+    color: #DFAF9C;
 }
 
 /* quick_member */
@@ -828,7 +829,7 @@ body {
 
 #store_banner {
     height: 450px;
-    background: url(../img/store/store_top_banner.png) no-repeat center;
+    background: url(../img/store/store_top_banner.jpg) no-repeat center;
 }
 
 #care_wrap {
@@ -869,28 +870,28 @@ body {
     z-index: 999;
     text-align: center;
     padding: 3px 0;
-    border-radius: 50px;
+    border-radius: 2px;
     color: #fff;
 }
 
 .point1 {
-    background-color: #F34570;
+    background-color: #b17d8a;
 }
 
 .point2 {
-    background-color: #000;
+    background-color: #504648;
 }
 
 .point3 {
-    background-color: #4BA276;
+    background-color: #87b17d;
 }
 
 .point4 {
-    background-color: #092A70;
+    background-color: #867db1;
 }
 
 .point5 {
-    background-color: #934697;
+    background-color: #b17dad;
 }
 
 .skin {
@@ -923,7 +924,7 @@ body {
 
 /* hair */
 #hair_wrap {
-    background-color: #6A917D;
+    background-color: #303030;
     color: #fff;
     padding-bottom: 10px;
 }
@@ -971,7 +972,7 @@ body {
     font-size: 30px;
     line-height: 40px;
     padding-bottom: 85px;
-    color: #333;
+    color: #fff;
 }
 
 .video_wrap video {
@@ -1024,13 +1025,13 @@ body {
     font-size: 50px;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    line-height: 50px;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.5em;
 }
 
 .event_bg_sub {
     font-size: 18px;
-    line-height: 20px;
+    line-height: 24px;
     color: #523B1F;
 }
 
@@ -1403,6 +1404,4 @@ td {
 
 .footer_bottom p {
     padding-top: 5px;
-
 }
-
