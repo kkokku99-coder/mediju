@@ -225,7 +225,7 @@ body {
 .menu {
     display: flex;
     font-size: 14px;
-    margin-left: 45px;
+    margin-left: 55px;
 }
 
 .menu ul:nth-child(1) {
@@ -964,4 +964,5 @@ dd {
 
 .footer_bottom p {
     padding-top: 5px;
+
 }
