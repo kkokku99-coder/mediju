@@ -307,7 +307,7 @@ body {
 
 .video_logo img {
     display: block;
-    margin-top: 400px;
+    margin-top: 300px;
 }
 
 .video_text .main_text {
@@ -1002,4 +1002,5 @@ dd {
 
 .footer_bottom p {
     padding-top: 5px;
+
 }
