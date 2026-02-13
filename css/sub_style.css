@@ -102,7 +102,7 @@ body {
 }
 
 .pink {
-    color: #BE7D80;
+    color: #df898d;
     font-weight: 600;
 }
 
@@ -303,6 +303,8 @@ body {
 #about {
     background: url(../img/brand_story/about_bg.png) no-repeat center;
     color: #fff;
+    position: static;
+    z-index: -1px;
 }
 
 .inner_wrap {
@@ -386,6 +388,22 @@ body {
     font-weight: bold;
     line-height: 60px;
     margin: 90px 0 70px;
+}
+/* 각 글자를 inline-block으로 만들고 애니메이션 적용 */
+.wave span {
+  display: inline-block;
+  transform-origin: center;
+  animation: wave 1.05s ease-in-out;
+  animation-delay: calc(var(--i) * 0.04s); /* 글자별로 지연을 줘 물결 효과 생성 */
+}
+
+/* 물결 키프레임: Y축 이동 + 살짝 기울기(옵션) */
+@keyframes wave {
+  0%   { transform: translateY(0) rotate(0deg); }
+  20%  { transform: translateY(-8px) rotate(-1.5deg); }
+  40%  { transform: translateY(0) rotate(0deg); }
+  60%  { transform: translateY(6px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
 .brand_story_visual img {
@@ -490,7 +508,7 @@ body {
     font-weight: 400;
 }
 
-.color {
+.grow .color {
     color: #DFAF9C;
 }
 
@@ -516,7 +534,7 @@ body {
 
 /*team */
 .info_wrap {
-    margin: 50px 0;
+    margin: 80px 0;
     height: 800px;
     display: flex;
 }
@@ -561,12 +579,6 @@ body {
     color: #333B4C;
 }
 
-.neon {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 5px 0;
-}
-
 .profile {
     color: #333B4C;
     font-size: 24px;
@@ -577,13 +589,14 @@ body {
 }
 
 #team_banner {
+    margin-top: 200px;
     background: url(../img/our_team/our_team_bg.png) no-repeat center;
 }
 
 .inner_text {
     font-size: 24px;
     height: 520px;
-    color: #614033;
+    color: #433939;
     padding-top: 180px;
     box-sizing: border-box;
 }
@@ -592,12 +605,13 @@ body {
     font-size: 40px;
     line-height: 55px;
     font-weight: bold;
+    color: #555353;
 }
 
 .grow4 {
     font-size: 64px;
     font-weight: bold;
-    color: #e0977b;
+    color: #643143;
     padding: 40px 0;
 }
 
@@ -606,14 +620,43 @@ body {
     font-size: 16px;
     font-weight: 600;
     display: inline-block;
-    border: 0.1px solid #614033;
+    border: 0.2px solid #433939b6;
     padding: 15px 40px;
     margin-top: 30px;
 }
 
 .inner_text a:hover {
-    background-color: #614033a8;
+    background-color: #643143bd;
     color: #fff;
+}
+
+/* neon scroll ani */
+.neon{
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    line-height: -0;
+}
+
+.neon::after {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: #f8ba7d;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 스크롤 시 클래스 추가되면 애니메이션 실행 */
+.neon.active::after {
+    transform: scaleX(1);
 }
 
 /* membership */
@@ -660,15 +703,15 @@ body {
 }
 
 .ai {
-    background: url(../img/program/ai_bg.png);
+    background: url(../img/program/ai_bg.png) no-repeat center;
 }
 
 .second {
-    background: url(../img/program/secon_chance_bg.png);
+    background: url(../img/program/secon_chance_bg.png) no-repeat center;
 }
 
 .rebalance {
-    background: url(../img/program/balance_bg.png);
+    background: url(../img/program/balance_bg.png) no-repeat center;
 }
 
 .signature {
@@ -745,7 +788,6 @@ body {
 }
 
 /* store */
-#personal_oder {}
 
 .inner_personal_oder {
     padding: 70px 0 30px;
@@ -1008,7 +1050,7 @@ body {
     display: flex;
     gap: 30px;
     border: 1px solid #ccc;
-    border-radius: 50px;
+    border-radius: 30px;
     margin-bottom: 20px;
 }
 
@@ -1016,7 +1058,7 @@ body {
     display: block;
     width: 330px;
     height: 330px;
-    border-radius: 50px 0 0 50px;
+    border-radius: 30px 0 0 30px;
 }
 
 .event_title {
@@ -1057,11 +1099,48 @@ body {
     display: inline-block;
     width: 100px;
     padding: 5px 0;
-    border-radius: 50px;
+    border-radius: 3px;
     margin: 30px 5px 0 0;
 }
-
+/* contact preview */
+#preview_wrap{
+    display: flex;
+    justify-content: space-between;
+}
+#preview_wrap #contact_wrap{
+    width: 630px;
+}
+#preview_wrap #contact_wrap ul{
+    padding: 0 23px;
+    font-size: 20px;
+    color: #686868;
+}
+.more{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+.more_btn{
+    margin: 120px 0 50px;
+    display: inline-block;
+    font-size: 18px;
+    color: #747475;
+}
+.more_btn:hover{
+    color: #A72A59;
+}
 /* notice */
+.return_wrap{
+    display: flex;
+    gap: 580px;
+}
+.return_btn{
+    display: inline-block;
+    margin-top: 120px;
+}
+.return_btn img{
+    display: block;
+}
 .contact_title {
     text-align: center;
     font-size: 45px;
@@ -1094,53 +1173,65 @@ td {
     text-align: left;
     width: 65%;
 }
+
 .col3 {
     width: 20%;
 }
+
 /* QnA */
-.line{
+.line {
     height: 1px;
     background-color: #999;
 }
-.qna{
+
+.qna {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 120px;
 }
-.qna_btn{
+
+.qna_btn {
     display: flex;
     align-items: center;
 }
-.qna_btn strong{
+
+.qna_btn strong {
     display: block;
     width: 10%;
     text-align: center;
 }
-.color{
+
+.color {
     color: #D43A3D;
 }
-.qna_btn p{
+
+.qna_btn p {
     font-weight: bold;
     width: 85%;
     padding: 25px 0;
 }
-.qna_btn span{
+
+.qna_btn span {
     display: block;
     width: 5%;
     text-align: center;
 }
-.qna_btn span img{
+
+.qna_btn span img {
     transition: transform 0.5s;
 }
-.turn img{
+
+.turn img {
     transform: rotate(180deg);
 }
-.answer{
+
+.answer {
     background-color: #faeeee;
     display: flex;
     padding: 30px 0;
 }
-.answer strong{
+
+.answer strong {
     display: block;
     width: 10%;
     text-align: center;
@@ -1150,46 +1241,51 @@ td {
 
 /* request */
 
-#reservation_wrap{
+#reservation_wrap {
     background: url(../img/request_bg.png) no-repeat center;
     padding-bottom: 120px;
 }
-.inner_reservation_wrap{
-    
-}
-.reservation_title{
+
+.reservation_title {
     font-size: 40px;
     padding: 120px 0 30px;
 }
-.reservation_sub{
+
+.reservation_sub {
     font-size: 20px;
 }
-.coordi> .code_wrap{
+
+.coordi>.code_wrap {
     margin-bottom: 100px;
 }
+
 .request {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #F3F3F3;
 }
 
-.check{
+.check {
     font-weight: 600;
     color: #b93a40;
     padding: 30px 0 50px;
 }
-.call{
+
+.call {
     font-size: 30px;
     line-height: 50px;
     font-weight: 600;
 }
-.call_num{
+
+.call_num {
     font-size: 60px;
     color: #9c9c9c;
 }
-.input_wrap{
+
+.input_wrap {
     margin-top: 120px;
 }
+
 .request .name_wrap,
 .request .tel_wrap,
 .request .textarea_wrap {
@@ -1228,13 +1324,6 @@ td {
     font-family: "Pretendard Variable";
     color: #c2c2c2;
     font-weight: 200;
-}
-
-.request_title,
-.contact_title {
-    font-size: 30px;
-    font-weight: 600;
-    padding: 10px 0;
 }
 
 .request_btn {

@@ -457,13 +457,13 @@ body {
     transform: translateY(200px);
     transition: transform 0.5s;
     position: absolute;
-    top: 200px;
+    top: 220px;
     left: 0;
     width: 100%;
-    height: 200px;
+    height: 180px;
     color: #fff;
     background-color: #333b4cc0;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
 }
 .cover_wrap:hover .cover{
@@ -473,8 +473,8 @@ body {
 .cover .event_title{
     font-size: 24px;
     font-weight: 600;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+
     /* A keyframe */
     transform: translateX(-200px);
     transition: transform 0.5s;
@@ -484,7 +484,7 @@ body {
     transform: translateX(0);
 }
 .cover p{
-    padding-top: 10px;
+    padding-top: 15px;
     font-size: 14px;
     /* A keyframe */
     transform: translateX(-200px);
@@ -498,12 +498,7 @@ body {
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
-    margin-top: 20px;
-    margin-left: 145px;
-    border: 1px solid #fff;
-    border-radius: 100px;
-    padding: 4px 12px;
-     /* A keyframe */
+    margin-left: 190px;
     transform: translateY(200px);
     transition: transform 1s;
 }
@@ -512,8 +507,6 @@ body {
     transform: translateY(0);
 }
 .event_btn:hover{
-background-color: #DFAE9C;
-border: #DFAE9C;
 font-weight: 700;
 }
 .event_img img{
@@ -666,7 +659,7 @@ font-weight: 700;
 }
 
 .pink {
-    color: #BE7D80;
+    color: #df898d;
     font-weight: 700;
 }
 
@@ -814,8 +807,8 @@ strong {
     display: flex;
     gap: 40px;
     height: 460px;
-    box-sizing: border-box;
     font-size: 20px;
+    padding-bottom: 100px;
 }
 
 .request {

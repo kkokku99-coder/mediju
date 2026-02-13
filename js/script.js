@@ -36,4 +36,6 @@ $(function () {
         $(this).children("span").toggleClass("turn");
         $(".qna_btn").not(this).children("span").removeClass("turn");
     });
+    
+
 });
